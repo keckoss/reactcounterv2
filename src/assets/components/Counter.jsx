@@ -14,20 +14,32 @@ function Counter() {
         <div key={index}>
           <button
             onClick={() => {
-              //   setCounters(counters[0] + 1);
               const newCounters = [...counters];
               newCounters[index] = newCounters[index] + 1;
               setCounters(newCounters);
-
-              console.log("coucou");
             }}
           >
             +
           </button>
           <p>{counter}</p>
-          <p>{index}</p>
-          <button>-</button>
-          <button>Reset</button>
+          <button
+            onClick={() => {
+              const newCounters = [...counters];
+              newCounters[index] = newCounters[index] - 1;
+              setCounters(newCounters);
+            }}
+          >
+            -
+          </button>
+          <button
+            onClick={() => {
+              const newCounters = [...counters];
+              newCounters[index] = newCounters[index] = 0;
+              setCounters(newCounters);
+            }}
+          >
+            Reset
+          </button>
         </div>
       ))}
     </div>
